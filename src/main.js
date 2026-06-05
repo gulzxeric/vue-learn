@@ -1,4 +1,4 @@
-import { createApp } from 'vue' //master branch revise
+import { createApp } from 'vue'
 import App from './App.vue'
 
 const app = createApp(App)
