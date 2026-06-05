@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp } from 'vue' // vue-learning revise
 import App from './App.vue'
 
 const app = createApp(App)
