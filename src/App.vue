@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue'
 import starRating from './components/starRating.vue'
 import count from './components/TodoList.vue'
-import usersControl from './components/userCard.vue'
+import usersControl from './components/UserCard.vue'
 
 const todos = ref([
   { text: '学 Vue', done: false },
