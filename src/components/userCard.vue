@@ -31,5 +31,5 @@ function setStar(id) {
       <span>{{ item.email }}</span>
     </li>
   </ul>
-  <span v-show="users.length < userMax">There's no more users</span>
+  <span v-show="users.length < userMax">There's no more users</span><br>
 </template>
