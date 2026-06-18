@@ -9,7 +9,7 @@
 
 ## 当前进度
 
-路线图位置：**第二阶段第 6 周末**（参考 `学习计划.md`）
+路线图位置：**第三阶段第 7 周**（参考 `学习计划.md`）
 
 已学完 ✅：
 - `ref` / `v-if` / `v-else` / `v-show` / `v-for` + `:key`
@@ -21,8 +21,8 @@
 - Vue Router：安装配置、`<router-link>` / `<router-view>`、动态路由 `:id`、嵌套路由 `children`、导航守卫 `beforeEach`、Query 参数 `?q=`
 - Pinia：Store 定义、Actions（同步/异步）、Getter
 - axios 封装 + 环境变量 `.env` + `import.meta.env`
-- Composition API：`ref` vs `reactive`
-- 练习项目：计数器、待办列表、星星评价、用户卡片、Card 容器组件、Clock 时钟组件、Search 搜索页、Pinia 计数器、用户列表、博客（列表+详情+评论）
+- Composition API：`ref` vs `reactive`、`watch`、`watchEffect`、`provide`/`inject`（概念）
+- 练习项目：计数器、待办列表、星星评价、用户卡片、Card 容器组件、Clock 时钟组件、Search 搜索页、Pinia 计数器、用户列表、博客（列表+详情+评论）、WatchDemo
 
 ## 曾遇到的难点（新 agent 注意，这里容易卡住）
 - **Props 为什么只读**：单向数据流的概念需要比喻辅助理解
@@ -35,11 +35,13 @@
 - **Reactive vs Responsive**："响应式"在 Vue 里是数据变→页面自动更新，和手机适配不是一回事
 - **`ref` vs `reactive`**：功能一样，`ref` 更通用。`ref` 在 `<script>` 里要 `.value`，`reactive` 不用
 - **路由组件复用不刷新**：同一组件跳转（如 `/user/1` → `/user/2`）不会重新挂载，需用 `computed` 追踪 `route.params`
+- **`watch` vs `watchEffect`**：`watch` 手动指定监听谁（有新旧值）；`watchEffect` 自动追踪依赖（立即执行，无新旧值）
+- **Props vs provide/inject vs Pinia**：Props 父子传参（清晰接口），provide/inject 祖孙传递（局部配置），Pinia 全局共享（大面积影响）
+- **`provide` / `inject` 滥用问题**：比 Props 更方便但让依赖变隐式、组件难复用、难追踪。适合主题/语言等局部配置，不适合主要数据流
 
 ## 下一阶段待学
-- `watchEffect`（已讲对比，实操待补）
-- 作用域插槽
-- `provide` / `inject`
+- 作用域插槽（实操）
+- `provide` / `inject` 练习巩固（主题色切换、权限标记等）
 - 自定义 Composables
 - TypeScript 入门
 
