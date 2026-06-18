@@ -9,7 +9,7 @@
 
 ## 当前进度
 
-路线图位置：**第二阶段第 4 周**（参考 `学习计划.md`）
+路线图位置：**第二阶段第 6 周末**（参考 `学习计划.md`）
 
 已学完 ✅：
 - `ref` / `v-if` / `v-else` / `v-show` / `v-for` + `:key`
@@ -19,7 +19,10 @@
 - 插槽 Slot（默认 + 后备内容 + 具名 Slot #header/#footer）
 - 生命周期 `onMounted` / `onUnmounted`（Clock 时钟练习）
 - Vue Router：安装配置、`<router-link>` / `<router-view>`、动态路由 `:id`、嵌套路由 `children`、导航守卫 `beforeEach`、Query 参数 `?q=`
-- 练习项目：计数器、待办列表、星星评价、用户卡片、Card 容器组件、Clock 时钟组件、Search 搜索页
+- Pinia：Store 定义、Actions（同步/异步）、Getter
+- axios 封装 + 环境变量 `.env` + `import.meta.env`
+- Composition API：`ref` vs `reactive`
+- 练习项目：计数器、待办列表、星星评价、用户卡片、Card 容器组件、Clock 时钟组件、Search 搜索页、Pinia 计数器、用户列表、博客（列表+详情+评论）
 
 ## 曾遇到的难点（新 agent 注意，这里容易卡住）
 - **Props 为什么只读**：单向数据流的概念需要比喻辅助理解
@@ -29,13 +32,16 @@
 - **Slot vs Props 的区别**：Props 传数据，Slot 传模板
 - **挂载（Mount）概念**：组件 DOM 插入页面的瞬间；`onMounted` 之后才能安全操作 DOM
 - **`onUnmounted` 清理资源**：计时器等后台任务必须在卸载时清理，否则内存泄漏
+- **Reactive vs Responsive**："响应式"在 Vue 里是数据变→页面自动更新，和手机适配不是一回事
+- **`ref` vs `reactive`**：功能一样，`ref` 更通用。`ref` 在 `<script>` 里要 `.value`，`reactive` 不用
+- **路由组件复用不刷新**：同一组件跳转（如 `/user/1` → `/user/2`）不会重新挂载，需用 `computed` 追踪 `route.params`
 
 ## 下一阶段待学
-- Pinia 状态管理
-- 进阶方向（可先选修）：
-  - 作用域插槽
-  - `reactive` / `watchEffect`
-  - `provide` / `inject`
+- `watchEffect`（已讲对比，实操待补）
+- 作用域插槽
+- `provide` / `inject`
+- 自定义 Composables
+- TypeScript 入门
 
 ## 已知的组件文件
 | 文件 | 功能 |
@@ -45,6 +51,8 @@
 | `src/components/userCard.vue` | 用户卡片列表。（命名不规范，但功能正常） |
 | `src/components/Card.vue` | 通用卡片容器，`title` prop + 默认 slot + 具名 slot（#header/#footer） |
 | `src/components/clock.vue` | 实时时钟，用 `onMounted` 启动计时器、`onUnmounted` 清理计时器 |
+| `src/components/CountDisplay.vue` | 显示 Pinia Store 的 count 值 |
+| `src/components/CountControls.vue` | ±1 按钮，调用 Pinia Action |
 
 ## 项目命令
 ```sh

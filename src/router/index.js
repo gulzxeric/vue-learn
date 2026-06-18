@@ -7,6 +7,11 @@ import UserProfile from "@/views/UserProfile.vue";
 import UserSettings from "@/views/UserSettings.vue";
 import Secret from "@/views/Secret.vue";
 import Search from "@/views/Search.vue"
+import CounterPage from '@/views/CounterPage.vue'
+import UserListPage from "@/views/UserListPage.vue";
+import BlogDetail from "@/views/BlogDetail.vue";
+import BlogList from "@/views/BlogList.vue";
+import RefVsReactive from "@/views/RefVsReactive.vue";
 
 const routes = [
   { path: '/', component: Home },
@@ -21,6 +26,11 @@ const routes = [
   },
   { path: '/secret', component: Secret },
   { path: '/search', component: Search },
+  { path: '/counter', component: CounterPage },
+  { path: '/users', component: UserListPage },
+  { path: '/blog', component: BlogList },
+  { path: '/blog/:id', component: BlogDetail },
+  { path: '/ref-reactive', component: RefVsReactive },
 ]
 
 const router = createRouter({
