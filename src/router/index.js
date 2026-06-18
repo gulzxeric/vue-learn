@@ -12,6 +12,8 @@ import UserListPage from "@/views/UserListPage.vue";
 import BlogDetail from "@/views/BlogDetail.vue";
 import BlogList from "@/views/BlogList.vue";
 import RefVsReactive from "@/views/RefVsReactive.vue";
+import watchDemo from "@/views/watchDemo.vue";
+import Favorites from '@/views/Favorites.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -31,6 +33,8 @@ const routes = [
   { path: '/blog', component: BlogList },
   { path: '/blog/:id', component: BlogDetail },
   { path: '/ref-reactive', component: RefVsReactive },
+  { path: '/watch', component: watchDemo },
+  { path: '/favorites', component: Favorites },
 ]
 
 const router = createRouter({

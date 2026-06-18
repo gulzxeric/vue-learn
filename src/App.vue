@@ -1,6 +1,21 @@
 <script setup>
+import { ref, provide } from 'vue'
+import ThemeBadge from './components/ThemeBadge.vue';
+const theme = ref('light')
+provide('theme', theme)
+
+function toggleTheme() {
+  theme.value = theme.value === 'light' ? 'dark' : 'light'
+}
+
+function setTitle(title) {
+  document.title = title + ' - Vue Learn'
+}
+
+provide('setTitle', setTitle)
 </script>
 <template>
+  <button @click="toggleTheme">切换主题</button>
   <nav>
     <router-link to="/">Home</router-link>
     <router-link to="/about">about</router-link>
@@ -14,10 +29,12 @@
     <router-link to="/users">Users</router-link>
     <router-link to="/blog">Blog</router-link>
     <router-link to="/ref-reactive">RefVsReactive</router-link>
-
+    <router-link to="/watch">WatchDemo</router-link>
+    <router-link to="/favorites">收藏</router-link>
   </nav>
   <hr>
   <router-view />
+  <theme-badge />
 </template>
 <style>
 nav {

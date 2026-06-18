@@ -1,6 +1,9 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { computed } from 'vue'
+import { useDocumentTitle } from '@/composables/useDocumentTitle';
+
+useDocumentTitle('Search')
 
 const route = useRoute()
 const keyword = computed(() => route.query.q || '未输入搜索词')

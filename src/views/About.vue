@@ -1,4 +1,7 @@
 <script setup>
+import { useDocumentTitle } from '@/composables/useDocumentTitle';
+
+useDocumentTitle('About')
 </script>
 <template>
   <h1>📖 关于</h1>

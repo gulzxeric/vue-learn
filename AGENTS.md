@@ -22,7 +22,8 @@
 - Pinia：Store 定义、Actions（同步/异步）、Getter
 - axios 封装 + 环境变量 `.env` + `import.meta.env`
 - Composition API：`ref` vs `reactive`、`watch`、`watchEffect`、`provide`/`inject`（概念）
-- 练习项目：计数器、待办列表、星星评价、用户卡片、Card 容器组件、Clock 时钟组件、Search 搜索页、Pinia 计数器、用户列表、博客（列表+详情+评论）、WatchDemo
+- 自定义 Composables：useFetch（通用请求）、useDebounce（防抖）、useDocumentTitle（页面标题）
+- 练习项目：计数器、待办列表、星星评价、用户卡片、Card 容器组件、Clock 时钟组件、Search 搜索页、Pinia 计数器、用户列表、博客（列表+详情+评论+搜索+收藏）、WatchDemo
 
 ## 曾遇到的难点（新 agent 注意，这里容易卡住）
 - **Props 为什么只读**：单向数据流的概念需要比喻辅助理解
@@ -42,7 +43,7 @@
 ## 下一阶段待学
 - 作用域插槽（实操）
 - `provide` / `inject` 练习巩固（主题色切换、权限标记等）
-- 自定义 Composables
+- 作用域插槽
 - TypeScript 入门
 
 ## 已知的组件文件

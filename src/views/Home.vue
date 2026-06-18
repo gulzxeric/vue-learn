@@ -1,4 +1,7 @@
 <script setup>
+import { useDocumentTitle } from '@/composables/useDocumentTitle';
+
+useDocumentTitle('Home')
 </script>
 <template>
   <h1>🏠 首页</h1>

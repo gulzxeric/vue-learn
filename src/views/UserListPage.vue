@@ -1,7 +1,9 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useUserStore } from '@/stores/users'
+import { useDocumentTitle } from '@/composables/useDocumentTitle';
 
+useDocumentTitle('UserList')
 const userStore = useUserStore()
 onMounted(() => { userStore.fetchUsers() })
 </script>
