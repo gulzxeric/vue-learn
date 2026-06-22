@@ -1,14 +1,19 @@
-<script setup>
-import { ref, computed } from 'vue'
+<script setup lang="ts">
+interface User {
+  id: number
+  avatar: string
+  name: string
+  faved: boolean
+  email: string
+}
+const props = defineProps<{
+  users: User[],
+  userMax: number,
+}>()
 
-const props = defineProps({
-  users: Array,
-  userMax: Number,
-})
+const emit = defineEmits<{'toggle-friends': [id: number]}>()
 
-const emit = defineEmits(['toggle-friends'])
-
-function setStar(id) {
+function setStar(id:number) {
   emit('toggle-friends', id)
 }
 
@@ -19,10 +24,10 @@ function setStar(id) {
     <span>{{ users.length }} / {{ userMax }}</span>
   </p>
   <ul :style="{ listStyleType: 'none' }">
-    <li v-for="(item, index) in users">
+    <li v-for="(item, index) in users" :key="item.id">
       <span>{{ item.avatar }}</span>
       <span>{{ item.name }}</span>
-      <span @click="setStar(item.id)" :style="{ 
+      <span @click="setStar(item.id)" :style="{
         cursor: 'pointer',
         color: item.faved ? 'gold' : '#ccc', fontSize: '30px'
       }">

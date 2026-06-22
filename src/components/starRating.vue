@@ -1,14 +1,14 @@
-<script setup>
+<script setup lang="ts">
 import { ref, computed } from 'vue'
 
 // Props — 父组件传进来的数据
-const props = defineProps({
-  rating: Number,
-  max: Number,
-})
+const props = defineProps<{
+  rating: number,
+  max: number,
+}>()
 
 // emit — 通知父组件
-const emit = defineEmits(['update-rating'])
+const emit = defineEmits<{'update-rating':[value: number]}>()
 
 const level = computed(() => {
   if (props.rating <= 2) return '很差'
@@ -16,7 +16,7 @@ const level = computed(() => {
   return '很好'
 })
 
-function setRating(star) {
+function setRating(star: number) {
   emit('update-rating', star)
 }
 </script>

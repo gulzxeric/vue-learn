@@ -1,14 +1,17 @@
-<script setup>
-import { ref, computed } from 'vue'
+<script setup lang="ts">
+interface Todo {
+  text: string
+  done: boolean
+}
 
-const props = defineProps({
-    todos: Array,
-    doneCount: Number,
-})
+const props = defineProps<{
+    todos: Todo[],
+    doneCount: number,
+}>()
 
-const emit = defineEmits(['toggle-todo'])
+const emit = defineEmits<{'toggle-todo':[value: number]}>()
 
-function toggle(index) {
+function toggle(index: number) {
     emit('toggle-todo', index)
 }
 
